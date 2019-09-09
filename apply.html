@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<h1>Apply Mock Server </h1>
+<h2 id='queryStr'></h2>
+<p id='content'></p>
+
+<script>
+  var urlParams = new URLSearchParams(window.location.search);
+  document.getElementById('queryStr').innerHTML = 'query string: ' + urlParams.toString();
+
+  var content = [];
+  var agentId = urlParams.get('agentId');
+  var address = urlParams.get('address');
+  content.push('agentId=' + agentId + '</br>');
+  content.push('address=' + address + '</br>');
+  document.getElementById('content').innerHTML = content.join('');
+
+</script>
+
+</body>
+</html>
